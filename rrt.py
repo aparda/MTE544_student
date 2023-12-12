@@ -253,6 +253,10 @@ class RRT:
             dx_list = [ox - x for x in node.path_x]
             dy_list = [oy - y for y in node.path_y]
 
+            if len(dx_list) == 0:
+                print(ox, oy, size)
+                print(node)
+            
             # Calculate the squared distances from the obstacle to each point on the path
             d_list = [dx * dx + dy * dy for (dx, dy) in zip(dx_list, dy_list)]
 
